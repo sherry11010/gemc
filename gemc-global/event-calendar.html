@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Event Calendar | GEMC Global</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
+    <script>
+        tailwind.config = {
+            theme:{
+                extend:{
+                    colors:{
+                        gemc:{dark:'#0c1a2d',primary:'#142c4b',accent:'#22a39f',light:'#f6f8fa'}
+                    },
+                    fontFamily:{sans:['Inter','Helvetica','Arial','sans-serif']}
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities{
+            .series-title{font-size:clamp(1.75rem,3vw,2.5rem);font-weight:700;letter-spacing:-0.02em;}
+            .location-tag{text-transform:uppercase;letter-spacing:0.08em;}
+        }
+    </style>
+</head>
+<body class="bg-white text-slate-800 font-sans">
+<header class="fixed w-full z-50 transition-all duration-300">
+    <div class="container mx-auto px-4 py-5 flex justify-between items-center">
+        <a href="index.html" class="text-2xl font-bold text-white">GEMC <span class="text-gemc-accent">Global</span></a>
+        <nav class="hidden md:flex gap-8 text-sm text-white/90">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="event-calendar.html" class="border-b-2 border-gemc-accent pb-1">Event Calendar</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+        <button id="menuBtn" class="md:hidden text-white text-2xl"><i class="fa fa-bars"></i></button>
+    </div>
+    <div id="mobileMenu" class="hidden md:hidden bg-gemc-dark/95 px-4 pb-6">
+        <div class="flex flex-col gap-4 text-white">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="event-calendar.html">Event Calendar</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </div>
+</header>
+
+<section class="bg-gemc-light pt-32 pb-14">
+    <div class="container mx-auto px-4">
+        <h1 class="text-[clamp(2rem,4vw,3rem)] font-bold text-gemc-dark mb-3">Event Calendar</h1>
+        <p class="text-slate-600 max-w-3xl">Global summits for methane-reduction, biomethane, SAF and low-carbon-gas transition.</p>
+    </div>
+</section>
+
+<main class="container mx-auto px-4 py-12 max-w-6xl">
+    <!-- 原有 GEMC 峰会板块 -->
+    <section class="mb-20">
+        <h2 class="series-title mb-2">Global<br><span class="text-gemc-accent">Energy & Methane</span><br>Summit Series</h2>
+        <div class="location-tag text-slate-500 text-sm mb-8">Singapore | Dubai | Madrid</div>
+
+        <article class="mb-14">
+            <div class="aspect-[16/9] bg-slate-200 rounded-xl overflow-hidden mb-5">
+                <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=1400&q=80" alt="GEMC Global 2026" class="w-full h-full object-cover">
+            </div>
+            <div class="text-sm text-slate-500 mb-1">Singapore, Hybrid On-site & Virtual</div>
+            <div class="font-semibold mb-3">18-20 November 2026</div>
+            <h3 class="text-2xl font-bold mb-2">GEMC Global 2026</h3>
+            <p class="text-slate-600 mb-4">Global flagship summit for methane-abatement, biomethane, SAF and low-carbon-LNG value-chain.</p>
+            <a href="single-event.html" class="inline-flex items-center gap-2 text-gemc-accent font-medium hover:underline">Learn More <i class="fa fa-arrow-right"></i></a>
+        </article>
+    </section>
+
+    <!-- ===== 新增：Our Upcoming Events（SAF两场峰会，和截图一致） ===== -->
+    <section class="mb-20">
+        <h2 class="series-title text-center mb-10">Our Upcoming Events</h2>
+        <div class="grid md:grid-cols-2 gap-8">
+            <!-- SAF Europe Summit 2027 -->
+            <div class="bg-gemc-light rounded-xl overflow-hidden">
+                <div class="px-5 pt-5">
+                    <div class="text-sm text-gemc-primary font-semibold">World Trade Center Rotterdam, Netherlands</div>
+                    <div class="text-sm text-gemc-primary font-semibold mt-1">13 – 14 April 2027</div>
+                </div>
+                <div class="mt-4">
+                    <img src="这里替换SAF Europe海报地址" alt="SAF Europe Summit 2027" class="w-full">
+                </div>
+                <div class="p-5">
+                    <h3 class="text-xl font-bold text-gemc-primary mb-2">SAF Europe Summit 2027</h3>
+                    <p class="text-slate-600 text-sm mb-4">Europe's Leading Event for SAF Markets, Energy Security, and Global Fuel Partnerships</p>
+                    <a href="#" class="inline-flex items-center gap-2 text-gemc-accent font-medium hover:underline">Learn More <i class="fa fa-arrow-right"></i></a>
+                </div>
+            </div>
+            <!-- SAF APAC Summit 2027 -->
+            <div class="bg-gemc-light rounded-xl overflow-hidden">
+                <div class="px-5 pt-5">
+                    <div class="text-sm text-gemc-primary font-semibold">ICC Sydney, Australia</div>
+                    <div class="text-sm text-gemc-primary font-semibold mt-1">13 – 14 July 2027</div>
+                </div>
+                <div class="mt-4">
+                    <img src="这里替换SAF APAC海报地址" alt="SAF APAC Summit 2027" class="w-full">
+                </div>
+                <div class="p-5">
+                    <h3 class="text-xl font-bold text-gemc-primary mb-2">SAF APAC Summit 2027</h3>
+                    <p class="text-slate-600 text-sm mb-4">APAC's Leading Event for Advancing Sustainable Aviation Fuel and the Gateway Connecting Asia-Pacific with the Global SAF Market.</p>
+                    <a href="#" class="inline-flex items-center gap-2 text-gemc-accent font-medium hover:underline">Learn More <i class="fa fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== 新增：Our Past Events ===== -->
+    <section>
+        <h2 class="series-title text-center mb-10">Our Past Events</h2>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div class="bg-gemc-light rounded-lg overflow-hidden">
+                <img src="这里替换历史海报1" alt="Past Event" class="w-full">
+            </div>
+            <div class="bg-gemc-light rounded-lg overflow-hidden">
+                <img src="这里替换历史海报2" alt="Past Event" class="w-full">
+            </div>
+            <div class="bg-gemc-light rounded-lg overflow-hidden">
+                <img src="这里替换历史海报3" alt="Past Event" class="w-full">
+            </div>
+            <div class="bg-gemc-light rounded-lg overflow-hidden">
+                <img src="这里替换历史海报4" alt="Past Event" class="w-full">
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="bg-gemc-dark text-white py-14">
+    <div class="container mx-auto px-4">
+        <div class="grid md:grid-cols-4 gap-8">
+            <div>
+                <div class="text-2xl font-bold mb-4">GEMC <span class="text-gemc-accent">Global</span></div>
+                <p class="text-white/70 text-sm">Global Energy & Methane Conference, advancing clean-gas energy-transition worldwide.</p>
+            </div>
+            <div>
+                <h5 class="font-bold mb-4">Quick Links</h5>
+                <ul class="space-y-2 text-sm text-white/70">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="event-calendar.html">Event Calendar</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h5 class="font-bold mb-4">Contact</h5>
+                <ul class="space-y-2 text-sm text-white/70">
+                    <li><i class="fa fa-envelope mr-2"></i>info@gemcglobal.org</li>
+                </ul>
+            </div>
+            <div>
+                <h5 class="font-bold mb-4">Follow</h5>
+                <div class="flex gap-4 text-2xl">
+                    <a href="#" class="hover:text-gemc-accent"><i class="fa fa-linkedin-square"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="border-t border-white/10 mt-10 pt-6 text-center text-white/50 text-sm">© 2026 GEMC Global. All Rights Reserved.</div>
+    </div>
+</footer>
+
+<script>
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    menuBtn.addEventListener('click',()=>mobileMenu.classList.toggle('hidden'));
+    mobileMenu.querySelectorAll('a').forEach(link=>link.onclick=()=>mobileMenu.classList.add('hidden'));
+    const navbar = document.querySelector('header');
+    window.addEventListener('scroll',()=>{
+        if(window.scrollY>80){navbar.classList.add('bg-gemc-dark/95','shadow-md');}
+        else{navbar.classList.remove('bg-gemc-dark/95','shadow-md');}
+    })
+</script>
+</body>
+</html>

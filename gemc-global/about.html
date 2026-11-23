@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>About | GEMC Global</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
+    <script>
+        tailwind.config = {
+            theme:{
+                extend:{
+                    colors:{
+                        gemc:{dark:'#0c1a2d',primary:'#142c4b',accent:'#22a39f',light:'#f6f8fa'}
+                    },
+                    fontFamily:{sans:['Inter','Helvetica','Arial','sans-serif']}
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities{
+            .tracking-caps{letter-spacing:0.08em;text-transform:uppercase;}
+        }
+    </style>
+</head>
+<body class="bg-white text-slate-800 font-sans">
+<header class="fixed w-full z-50 transition-all duration-300">
+    <div class="container mx-auto px-4 py-5 flex justify-between items-center">
+        <a href="index.html" class="text-2xl font-bold text-white">GEMC <span class="text-gemc-accent">Global</span></a>
+        <nav class="hidden md:flex gap-8 text-sm text-white/90">
+            <a href="index.html">Home</a>
+            <a href="about.html" class="border-b-2 border-gemc-accent pb-1">About</a>
+            <a href="event-calendar.html">Event Calendar</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+        <button id="menuBtn" class="md:hidden text-white text-2xl"><i class="fa fa-bars"></i></button>
+    </div>
+    <div id="mobileMenu" class="hidden md:hidden bg-gemc-dark/95 px-4 pb-6">
+        <div class="flex flex-col gap-4 text-white">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="event-calendar.html">Event Calendar</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </div>
+</header>
+
+<section class="bg-gemc-dark pt-32 pb-16">
+    <div class="container mx-auto px-4">
+        <h1 class="text-[clamp(2rem,4vw,3rem)] font-bold text-white">About GEMC Global</h1>
+    </div>
+</section>
+
+<main class="py-20">
+    <div class="container mx-auto px-4 max-w-5xl">
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold text-gemc-dark mb-4">Our Story</h2>
+            <p class="text-lg text-slate-700 mb-4">GEMC Global is the international summit series focused on methane reduction and renewable-gas value-chain. We organize global-scale summits connecting energy-industry stakeholders across Asia-Pacific, Europe and Middle-East.</p>
+            <p class="text-lg text-slate-700">Our events enable project matchmaking, policy discussion, technology showcase and investment dialogue for methane abatement, biogas-biomethane, SAF and low-carbon LNG markets.</p>
+        </section>
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold text-gemc-dark mb-4">Purpose, Vision & Values</h2>
+            <div class="space-y-6">
+                <div>
+                    <h3 class="font-bold text-xl text-gemc-primary">Purpose</h3>
+                    <p>To accelerate global methane-mitigation and renewable-gas deployment, by delivering high-impact summits that spark connections, shape industry agendas and turn ideas into real-world projects.</p>
+                </div>
+                <div>
+                    <h3 class="font-bold text-xl text-gemc-primary">Vision</h3>
+                    <p>Become the world’s most trusted conference platform for methane and renewable-gas stakeholders, bridging operators, technology vendors, financiers and policymakers.</p>
+                </div>
+                <div>
+                    <h3 class="font-bold text-xl text-gemc-primary">Core Values</h3>
+                    <ul class="list-disc pl-6 mt-2 space-y-1">
+                        <li>Industry-focused & Practical</li>
+                        <li>Global & Inclusive Collaboration</li>
+                        <li>Action-oriented Outcomes</li>
+                        <li>Trusted Delivery</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </div>
+</main>
+
+<footer class="bg-gemc-dark text-white py-14">
+    <div class="container mx-auto px-4">
+        <div class="grid md:grid-cols-4 gap-8">
+            <div>
+                <div class="text-2xl font-bold mb-4">GEMC <span class="text-gemc-accent">Global</span></div>
+                <p class="text-white/70 text-sm">Global Energy & Methane Conference, advancing clean-gas energy-transition worldwide.</p>
+            </div>
+            <div>
+                <h5 class="font-bold mb-4">Quick Links</h5>
+                <ul class="space-y-2 text-sm text-white/70">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="event-calendar.html">Event Calendar</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h5 class="font-bold mb-4">Contact</h5>
+                <ul class="space-y-2 text-sm text-white/70">
+                    <li><i class="fa fa-envelope mr-2"></i>info@gemcglobal.org</li>
+                </ul>
+            </div>
+            <div>
+                <h5 class="font-bold mb-4">Follow</h5>
+                <div class="flex gap-4 text-2xl">
+                    <a href="#" class="hover:text-gemc-accent"><i class="fa fa-linkedin-square"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="border-t border-white/10 mt-10 pt-6 text-center text-white/50 text-sm">© 2026 GEMC Global. All Rights Reserved.</div>
+    </div>
+</footer>
+
+<script>
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    menuBtn.addEventListener('click',()=>mobileMenu.classList.toggle('hidden'));
+    mobileMenu.querySelectorAll('a').forEach(link=>link.onclick=()=>mobileMenu.classList.add('hidden'));
+    const navbar = document.querySelector('header');
+    window.addEventListener('scroll',()=>{
+        if(window.scrollY>80){navbar.classList.add('bg-gemc-dark/95','shadow-md');}
+        else{navbar.classList.remove('bg-gemc-dark/95','shadow-md');}
+    })
+</script>
+</body>
+</html>

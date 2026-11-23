@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Contact | GEMC Global</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
+    <script>
+        tailwind.config = {
+            theme:{
+                extend:{
+                    colors:{
+                        gemc:{dark:'#0c1a2d',primary:'#142c4b',accent:'#22a39f',light:'#f6f8fa'}
+                    },
+                    fontFamily:{sans:['Inter','Helvetica','Arial','sans-serif']}
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-white text-slate-800 font-sans">
+<header class="fixed w-full z-50 transition-all duration-300">
+    <div class="container mx-auto px-4 py-5 flex justify-between items-center">
+        <a href="index.html" class="text-2xl font-bold text-white">GEMC <span class="text-gemc-accent">Global</span></a>
+        <nav class="hidden md:flex gap-8 text-sm text-white/90">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="event-calendar.html">Event Calendar</a>
+            <a href="contact.html" class="border-b-2 border-gemc-accent pb-1">Contact</a>
+        </nav>
+        <button id="menuBtn" class="md:hidden text-white text-2xl"><i class="fa fa-bars"></i></button>
+    </div>
+    <div id="mobileMenu" class="hidden md:hidden bg-gemc-dark/95 px-4 pb-6">
+        <div class="flex flex-col gap-4 text-white">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="event-calendar.html">Event Calendar</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </div>
+</header>
+
+<section class="bg-gemc-dark pt-32 pb-16">
+    <div class="container mx-auto px-4">
+        <h1 class="text-[clamp(2rem,4vw,3rem)] font-bold text-white">Contact Us</h1>
+    </div>
+</section>
+
+<main class="py-20">
+    <div class="container mx-auto px-4 max-w-5xl">
+        <div class="grid md:grid-cols-2 gap-12">
+            <div>
+                <h2 class="text-2xl font-bold text-gemc-dark mb-4">Get in Touch</h2>
+                <p class="mb-6">For conference registration, sponsorship, speaking opportunities and general enquiries.</p>
+                <ul class="space-y-4">
+                    <li><i class="fa fa-envelope text-gemc-accent mr-2"></i> info@gemcglobal.org</li>
+                </ul>
+            </div>
+            <div class="bg-gemc-light p-6 rounded-xl">
+                <h3 class="font-bold text-xl mb-4">Send Enquiry</h3>
+                <form>
+                    <div class="mb-4">
+                        <label class="block text-sm mb-1">Name</label>
+                        <input type="text" class="w-full px-4 py-2 border border-gray-300 rounded-lg">
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-sm mb-1">Email</label>
+                        <input type="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg">
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-sm mb-1">Message</label>
+                        <textarea rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-lg"></textarea>
+                    </div>
+                    <button class="bg-gemc-accent hover:bg-teal-600 w-full py-3 rounded-lg text-white font-medium">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</main>
+
+<footer class="bg-gemc-dark text-white py-14">
+    <div class="container mx-auto px-4">
+        <div class="grid md:grid-cols-4 gap-8">
+            <div>
+                <div class="text-2xl font-bold mb-4">GEMC <span class="text-gemc-accent">Global</span></div>
+                <p class="text-white/70 text-sm">Global Energy & Methane Conference, advancing clean-gas energy-transition worldwide.</p>
+            </div>
+            <div>
+                <h5 class="font-bold mb-4">Quick Links</h5>
+                <ul class="space-y-2 text-sm text-white/70">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="event-calendar.html">Event Calendar</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h5 class="font-bold mb-4">Contact</h5>
+                <ul class="space-y-2 text-sm text-white/70">
+                    <li><i class="fa fa-envelope mr-2"></i>info@gemcglobal.org</li>
+                </ul>
+            </div>
+            <div>
+                <h5 class="font-bold mb-4">Follow</h5>
+                <div class="flex gap-4 text-2xl">
+                    <a href="#" class="hover:text-gemc-accent"><i class="fa fa-linkedin-square"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="border-t border-white/10 mt-10 pt-6 text-center text-white/50 text-sm">© 2026 GEMC Global. All Rights Reserved.</div>
+    </div>
+</footer>
+
+<script>
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    menuBtn.addEventListener('click',()=>mobileMenu.classList.toggle('hidden'));
+    mobileMenu.querySelectorAll('a').forEach(link=>link.onclick=()=>mobileMenu.classList.add('hidden'));
+    const navbar = document.querySelector('header');
+    window.addEventListener('scroll',()=>{
+        if(window.scrollY>80){navbar.classList.add('bg-gemc-dark/95','shadow-md');}
+        else{navbar.classList.remove('bg-gemc-dark/95','shadow-md');}
+    })
+</script>
+</body>
+</html>
